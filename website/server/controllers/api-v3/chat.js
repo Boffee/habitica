@@ -73,7 +73,7 @@ api.getChat = {
   async handler (req, res) {
     const { user } = res.locals;
 
-    req.checkParams('groupId', apiError('groupIdRequired')).notEmpty();
+    checkParams('groupId', apiError('groupIdRequired')).notEmpty();
 
     const validationErrors = req.validationErrors();
     if (validationErrors) throw validationErrors;
